@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoàng Nam - Profile</title>
+    <style>
+        body {
+            background-color: rgb(137, 185, 185);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #c9bac0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #2b4d4d;
+            text-align: center;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+        .info {
+            line-height: 1.8;
+            text-align: center;
+        }
+        .social-links {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            background-color: #0056b3;
+            transition: all 0.3s ease;
+        }
+        .social-links a:hover {
+            background-color: #990052;
+            transform: scale(1.1);
+        }
+        textarea {
+            width: 80%;
+            height: 100px;
+            margin: 10px auto;
+            display: block;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            resize: none;
+            font-size: 16px;
+        }
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #0056b3;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #990052;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hi, Đây là trang profile của tui ! </h1>
+        <p class="info">
+            Chào mừng bạn đến với trang web cá nhân của mình. Mình là Hoàng Nam, yêu thích công nghệ, âm nhạc, và kết nối với mọi người.
+        </p>
+        <img src="nam.jpg" alt="Ảnh của Hoàng Nam" width="300">
+        <h2>Thông tin cá nhân</h2>
+        <ul class="info">
+            <li><strong>Họ và tên:</strong> Lê Nguyễn Hoàng Nam </li>
+            <li><strong>Tuổi:</strong> 18</li>
+            <li><strong>Sở thích:</strong> Âm nhạc, web developer, billiards</li>
+            <li><strong>Email:</strong> hoangnam0201deptrai@gmail.com</li>
+        </ul>
+        <h2>Kết nối với mình</h2>
+        <div class="social-links">
+            <a href="https://www.facebook.com/petaedy" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/lhnw.02/" target="_blank">Instagram</a>
+        </div>
+        <h2>Bài hát yêu thích</h2>
+        <img src="thislove.jpg" alt="Bìa bài hát" width="1000">
+        <audio autoplay controls src="Download.mp3"></audio>
+        <h2>Gửi lời nhắn yêu thương cho nam nhé ! </h2>
+        <form id="messageForm">
+            <textarea id="userMessage" placeholder="Nhập lời nhắn của bạn gửi cho Nam ..."></textarea>
+            <button type="button" onclick="sendMessage()">Gửi lời nhắn</button>
+        </form>
+        <audio id="sendAudio" src="nhạc sontung.mp3"></audio>
+    </div>
+    <footer>
+        &copy; 2025 Hoàng Nam. All rights reserved.
+    </footer>
+    <script>
+        function sendMessage() {
+            const message = document.getElementById("userMessage").value.trim();
+            const audio = document.getElementById("sendAudio");
+
+            if (message === "") {
+                alert("Vui lòng nhập lời nhắn trước khi gửi!");
+            } else {
+                audio.play();
+                alert("Lời nhắn của bạn đã được gửi:\n" + message);
+                document.getElementById("userMessage").value = "";
+            }
+        }
+    </script>
+</body>
+</html>
